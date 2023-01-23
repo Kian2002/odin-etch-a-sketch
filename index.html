@@ -10,7 +10,19 @@
 </head>
 
 <body>
-    <div id="container"></div>
+    <div class="wrapper">
+        <div class="selections">
+            <input type="color" class="selections-color" />
+            <button class="selections-color-mode">Color Mode</button>
+            <button class="selections-rainbow-mode">Rainbow Mode</button>
+            <button class="eraser">Eraser</button>
+            <button class="clear">Clear</button>
+            <input type="range" min="1" max="100" class="selections-size" />
+        </div>
+        <div id="container"></div>
+    </div>
+
+
 
     <script src="app.js"></script>
 </body>
