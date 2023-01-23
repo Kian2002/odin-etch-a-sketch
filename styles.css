@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -11,14 +12,15 @@
 #container {
     display: grid;
     background-color: #1F2937;
-    padding: 10px;
     grid-template-columns: repeat(var(--grid-column), 1fr);
     grid-template-rows: repeat(var(--grid-row), 1fr);
+    margin: auto;
+    margin-top: 5px;
+    width: 720px;
+    height: 720px;
 }
 
 .container-item {
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
     text-align: center;
 }

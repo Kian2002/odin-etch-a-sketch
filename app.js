@@ -1,21 +1,26 @@
 const grid = document.getElementById("container");
 
-const makeRows = (col, row) => {
-  grid.style.setProperty("--grid-column", col);
-  grid.style.setProperty("--grid-row", row);
-  for (let i = 0; i < col * row; i++) {
+const makeRows = (size) => {
+  grid.style.setProperty("--grid-column", size);
+  grid.style.setProperty("--grid-row", size);
+  for (let i = 0; i < size * size; i++) {
     let c = document.createElement("div");
-    c.addEventListener("mousedown", activate);
-    c.addEventListener("mouseleave", activate);
+    c.addEventListener("mouseover", activate);
     grid.appendChild(c).className = "container-item";
   }
 };
 
 const activate = (e) => {
-  console.log(e);
   e.target.style.backgroundColor = "black";
 };
 
 window.onload = () => {
-  makeRows(16, 16);
+  let gridSize = prompt("Enter grid size: 1 - 100");
+
+  while (gridSize > 100) {
+    gridSize = prompt("Enter grid size: 1 - 100");
+    console.log("log");
+  }
+
+  makeRows(gridSize);
 };
