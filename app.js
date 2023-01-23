@@ -1,4 +1,5 @@
 const grid = document.getElementById("container");
+const gridSize = document.getElementById("selection-size");
 
 const makeRows = (size) => {
   grid.style.setProperty("--grid-column", size);
@@ -18,12 +19,13 @@ const activate = (e) => {
   e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
 };
 
-window.onload = () => {
-  let gridSize = prompt("Enter grid size: 1 - 100");
-
-  while (gridSize > 100) {
-    gridSize = prompt("Enter grid size: 1 - 100");
-  }
-
-  makeRows(gridSize);
+const dragHandler = () => {
+  document.getElementById("slider-number").innerText =
+    gridSize.value + " X " + gridSize.value;
 };
+
+const sizeHandler = () => {
+  makeRows(gridSize.value);
+};
+
+makeRows(gridSize.value);
