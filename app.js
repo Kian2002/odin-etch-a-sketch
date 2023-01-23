@@ -1,22 +1,36 @@
 const grid = document.getElementById("container");
 const gridSize = document.getElementById("selection-size");
+const newColor = document.getElementById("selections-color");
+let currentMode = "colorMode";
+let currentColor = "#333";
+
+newColor.oninput = (e) => {
+  currentColor = e.target.value;
+};
 
 const makeRows = (size) => {
   grid.style.setProperty("--grid-column", size);
   grid.style.setProperty("--grid-row", size);
   for (let i = 0; i < size * size; i++) {
     let c = document.createElement("div");
-    c.addEventListener("mouseover", activate);
+    c.addEventListener("mouseover", changeColor);
     grid.appendChild(c).className = "container-item";
   }
 };
 
-const activate = (e) => {
-  const R = Math.floor(Math.random() * 255);
-  const G = Math.floor(Math.random() * 255);
-  const B = Math.floor(Math.random() * 255);
+const changeMode = (newMode) => {
+  currentMode = newMode;
+};
 
-  e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+const changeColor = (e) => {
+  if (currentMode === "rainbowMode") {
+    const R = Math.floor(Math.random() * 255);
+    const G = Math.floor(Math.random() * 255);
+    const B = Math.floor(Math.random() * 255);
+    e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
+  } else if (currentMode === "colorMode") {
+    e.target.style.backgroundColor = currentColor;
+  }
 };
 
 const dragHandler = () => {

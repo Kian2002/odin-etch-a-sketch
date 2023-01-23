@@ -44,6 +44,17 @@ button {
     border-radius: 5px;
     color: var(--secondary-color);
     width: 100%;
+    cursor: pointer;
+}
+
+button:focus {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    outline: 0;
+}
+
+#selection-size {
+    cursor: grab;
 }
 
 /* color wheel */
