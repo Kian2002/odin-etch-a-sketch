@@ -30,12 +30,20 @@ const changeColor = (e) => {
     e.target.style.backgroundColor = `rgb(${R}, ${G}, ${B})`;
   } else if (currentMode === "colorMode") {
     e.target.style.backgroundColor = currentColor;
+  } else if (currentMode === "eraserMode") {
+    e.target.style.backgroundColor = "#FFF";
   }
 };
 
 const dragHandler = () => {
   document.getElementById("slider-number").innerText =
     gridSize.value + " X " + gridSize.value;
+};
+
+const clearGrid = (x) => {
+  document.querySelectorAll(".container-item").forEach((item) => {
+    item.style.backgroundColor = "#FFF";
+  });
 };
 
 const sizeHandler = () => {

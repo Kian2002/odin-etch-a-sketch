@@ -15,8 +15,8 @@
             <input type="color" id="selections-color" value="#333333" />
             <button id="selections-color-mode" onclick="changeMode('colorMode')" autofocus>Color Mode</button>
             <button id="selections-rainbow-mode" onclick="changeMode('rainbowMode')">Rainbow Mode</button>
-            <button id="eraser">Eraser</button>
-            <button id="clear" onclick="clear()">Clear</button>
+            <button id="eraser" onclick="changeMode('eraserMode')">Eraser</button>
+            <button id="clear" onclick="clearGrid()">Clear</button>
             <div id="slider-number">10 X 10</div>
             <input type="range" min="1" max="100" id="selection-size" value="10" onchange="sizeHandler()"
                 oninput="dragHandler()" />
