@@ -50,4 +50,8 @@ const sizeHandler = () => {
   makeRows(gridSize.value);
 };
 
+const date = new Date().getFullYear();
+
+document.getElementById("date").innerText = `Copyright ${date} \u00A9 Kian2002`;
+
 makeRows(gridSize.value);

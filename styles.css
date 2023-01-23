@@ -18,12 +18,48 @@ body {
     background-color: var(--primary-color);
 }
 
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+h1 {
+    color: var(--secondary-color);
+    font-size: 80px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-weight: 300;
+    font-size: 20px;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    padding: 100px;
+    padding: 50px;
 }
 
 /* Selections section */
