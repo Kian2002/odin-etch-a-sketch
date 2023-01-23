@@ -9,9 +9,13 @@
     --grid-column: 1;
 }
 
+body {
+    background-color: #F38;
+}
+
 #container {
     display: grid;
-    background-color: #1F2937;
+    background-color: #FFF;
     grid-template-columns: repeat(var(--grid-column), 1fr);
     grid-template-rows: repeat(var(--grid-row), 1fr);
     margin: auto;
