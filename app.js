@@ -5,8 +5,17 @@ const makeRows = (col, row) => {
   grid.style.setProperty("--grid-row", row);
   for (let i = 0; i < col * row; i++) {
     let c = document.createElement("div");
-    c.innerText = i + 1;
+    c.addEventListener("mousedown", activate);
+    c.addEventListener("mouseleave", activate);
     grid.appendChild(c).className = "container-item";
   }
 };
-document.onload(makeRows(16, 16));
+
+const activate = (e) => {
+  console.log(e);
+  e.target.style.backgroundColor = "black";
+};
+
+window.onload = () => {
+  makeRows(16, 16);
+};
