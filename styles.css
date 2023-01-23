@@ -2,3 +2,24 @@
     margin: 0;
     padding: 0;
 }
+
+:root {
+    --grid-row: 1;
+    --grid-column: 1;
+}
+
+#container {
+    display: grid;
+    background-color: #2196F3;
+    padding: 10px;
+    grid-template-columns: repeat(var(--grid-column), 1fr);
+    grid-template-rows: repeat(var(--grid-row), 1fr);
+}
+
+.container-item {
+    background-color: rgba(93, 20, 117, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
